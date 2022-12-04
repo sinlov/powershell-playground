@@ -12,3 +12,9 @@ v2"
 # >> bar`
 # >> v1`
 # >> v2"
+echo "
+if input will show >> like below, to notice input line`
+echo `"foo`
+>> bar`
+>> v1`
+>> v2`""
