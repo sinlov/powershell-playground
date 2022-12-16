@@ -49,13 +49,14 @@ Update-Help Microsoft.PowerShell.*
 
 ## 获取命令帮助
 
-```bash
-Get-Help [cmd]
-Get-Help -Full [cmd]
-# 获取命令
-Get-Command [cmd]
+```ps1
+> help Get-EventLog
+> Get-Help [cmd]
+> Get-Help -Full [cmd]
+# 获取命令位置
+> Get-Command [cmd]
 # 获取对象的属性和方法
-Get-Service|Get-Member [method]
+> Get-Service | Get-Member [method]
 ```
 
 # 别名命令

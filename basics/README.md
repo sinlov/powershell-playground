@@ -71,10 +71,11 @@ echo "show env RUN_MODE: ${env:RUN_MODE}"
 - 永久设置环境变量
 
 ```ps1
+# 查看用户环境变量 等效 echo "${env:Path}"
 > [Environment]::GetEnvironmentvariable("Path", "User")
-> [Environment]::SetEnvironmentVariable("Path", "F:\KK\", "User")
+> [Environment]::SetEnvironmentVariable("Path", "c:\opt\bin", "User")
 
-#查看/添加系统环境变量
+# 查看/添加系统环境变量
 > [Environment]::GetEnvironmentvariable("Path", "Machine")
-> [Environment]::SetEnvironmentVariable( "Path", $env:Path + ";F:\KK\", [System.EnvironmentVariableTarget]::Machine )
+> [Environment]::SetEnvironmentVariable( "Path", $env:Path + ";C:\opt\bin", [System.EnvironmentVariableTarget]::Machine )
 ```
