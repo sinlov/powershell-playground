@@ -120,6 +120,10 @@ Powershell 不强制输入完整的参数名称
 
 > 注意： Show-Command 不能用在没有图形化的服务器上
 
+## 
+
+- [https://learn.microsoft.com/en-us/powershell/scripting/learn/ps101/05-formatting-aliases-providers-comparison?view=powershell-5.1#comparison-operators](https://learn.microsoft.com/en-us/powershell/scripting/learn/ps101/05-formatting-aliases-providers-comparison?view=powershell-5.1#comparison-operators)
+
 ## 运行外部命令技巧
 
 因为无法保证外部命令在 PowerShell 中的运行，所以当一个外部命令有很多参数，或者运行有冲突，可以这么做
