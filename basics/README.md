@@ -6,6 +6,8 @@
 
 Powershell 中的管道和 bash 有所不同，传递的是对象而不是字符串
 
+[https://learn.microsoft.com/zh-cn/powershell/scripting/learn/ps101/04-pipelines?view=powershell-5.1#the-pipeline](https://learn.microsoft.com/zh-cn/powershell/scripting/learn/ps101/04-pipelines?view=powershell-5.1#the-pipeline)
+
 ### 命令输出取行
 
 在 shell 中我们通常用 `grep` 实现，在 powershell 中可以用 `Where-Object` 实现
