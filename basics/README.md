@@ -120,7 +120,7 @@ Powershell 不强制输入完整的参数名称
 
 > 注意： Show-Command 不能用在没有图形化的服务器上
 
-## 
+## 比较运算符
 
 - [https://learn.microsoft.com/en-us/powershell/scripting/learn/ps101/05-formatting-aliases-providers-comparison?view=powershell-5.1#comparison-operators](https://learn.microsoft.com/en-us/powershell/scripting/learn/ps101/05-formatting-aliases-providers-comparison?view=powershell-5.1#comparison-operators)
 
