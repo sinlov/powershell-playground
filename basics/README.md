@@ -114,6 +114,8 @@ Powershell 不强制输入完整的参数名称
 > Get-EventLog -LogName Security -Cn SERVER2 -Newest 10
 ```
 
+- 不应在保存的脚本或与其他人共享的代码中使用别名，这样非常容易导致冲突
+
 ## 图形化参数
 
 使用 `Show-Command` 可以直接列出图形化的参数

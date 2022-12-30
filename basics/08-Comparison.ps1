@@ -33,3 +33,31 @@ Write-Output "`nUse [ -Match ] definition: Matches the specified regular express
 
 Write-Output "`nUse [ -NotMatch ] definition: Does not match the specified regular expression"
 'PowerShell' -NotMatch '^Shell*.'
+
+Write-Output "`nTo define collection Numbers 0-9"
+$Numbers = @(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
+
+Write-Output "`nUse [ -Contains ] definition: Determines if a collection contains a specified value"
+$Numbers -Contains 9
+
+Write-Output "`nUse [ -NotContains ] definition: Determines if a collection does not contain a specific value"
+$Numbers -NotContains 13
+
+Write-Output "`nThe `"in`" comparison operator was first introduced in PowerShell version 3.0. It's used to determine if a value is `"in`" an array"
+Write-Output "`nUse [ -In ] definition: Determines if a specified value is in a collection"
+8 -In $Numbers
+
+Write-Output "`nUse [ -NotIn ] definition: Determines if a specified value is in a collection"
+15 -NotIn $Numbers
+
+Write-Output "`nUse [ -Replace ] definition: Replaces the specified value"
+'SQL Saturday - Baton Rouge' -Replace 'saturday','Sat'
+
+Write-Output "`nThere are also methods like Replace() that can be used to replace things similar to the way the replace operator works"
+'SQL Saturday - Baton Rouge'.Replace('Saturday','Sat')
+
+Write-Output "`nBut the -Replace operator is case-insensitive by default, and the Replace() method is case-sensitive"
+'SQL Saturday - Baton Rouge'.Replace('saturday','Sat')
+
+Write-Output "`nSpecifying one value replaces that value with nothing. In the following example, I replace `"Shell`" with nothing"
+'PowerShell' -replace 'Shell'
