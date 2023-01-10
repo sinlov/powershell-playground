@@ -4,7 +4,7 @@ Write-Output "your only option is to use the Export-ModuleMember cmdlet"
 Write-Output "It's not necessary to use both Export-ModuleMember in the .PSM1 file and the FunctionsToExport section of the module manifest."
 Write-Output "One or the other is sufficient."
 
-Import-Module .\15-MyScriptModule.psm1
+Import-Module .\16-MyScriptModule.psm1
 
 Write-Output "`nUse module function"
 

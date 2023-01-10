@@ -1,6 +1,6 @@
 Write-Output "`nYou could manually import the file with the Import-Module cmdlet."
 
-Import-Module .\14-MyScriptModule.psm1
+Import-Module .\15-MyScriptModule.psm1
 
 Write-Output "`nTo take advantage of module autoloading, a script module needs to be saved in a folder with the same base name as the .PSM1 file and in a location specified in `$env:PSModulePath."
 Write-Output "This makes them easier to read: `$env:PSModulePath -split ';'"
