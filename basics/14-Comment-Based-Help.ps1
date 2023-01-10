@@ -43,6 +43,7 @@ function Get-MrAutoStoppedService {
   #>
 
       [CmdletBinding()]
+      [OutputType([Boolean])]
       param (
 
       )
