@@ -3,6 +3,30 @@
     Helper functions and shims for older versions of PowerShell
  #>
 
+Function Compare-StrIsBlank ([string]$InputObject) {
+  if (($InputObject -eq "") -or ($InputObject -eq $Null)) {
+    Return $True
+  } else {
+    Return $False
+  }
+}
+
+Function Compare-StrIsInteger ([string]$InputObject) {
+  if ($InputObject -match "^\d+$" ) {
+    Return $True
+  } else {
+    Return $False
+  }
+}
+
+Function Compare-StrIsFloat ([string]$InputObject) {
+  if ($InputObject -match "^\d+\.\d+$") {
+    Return $True
+  } else {
+    Return $False
+  }
+}
+
  function Expand-Path
  {
    <#
@@ -27,7 +51,9 @@
 
    [OutputType([String])]
    Param (
-       [Parameter(Mandatory=$true)]
+       [Parameter(
+         Mandatory=$true,
+         HelpMessage="need Expand-Path by -Path")]
        [String]
        $Path
    )
@@ -70,7 +96,9 @@
 
    [OutputType([String])]
    Param(
-       [Parameter(Mandatory=$true)]
+       [Parameter(
+         Mandatory=$true,
+         HelpMessage="need RelativePath by -RelativePath")]
        [String]
        $RelativePath
    )
@@ -111,7 +139,9 @@
       function Expand-Archive
       {
           Param(
-              [Parameter(Mandatory=$true)]
+              [Parameter(
+               Mandatory=$true,
+               HelpMessage="need Path by -Path")]
               [String]
               $Path
           )
@@ -181,10 +211,14 @@
    [CmdletBinding()]
    [OutputType([Boolean])]
    param (
-     [Parameter(Mandatory=$true)]
+     [Parameter(
+       Mandatory=$true,
+       HelpMessage="need Invoke-FileDownload by -Uri")]
      [uri] $Uri,
 
-     [Parameter(Mandatory)]
+     [Parameter(
+       Mandatory,
+       HelpMessage="need Invoke-FileDownload by -OutFile")]
      [string] $OutFile,
 
      [Parameter(Mandatory=$false)]
@@ -218,4 +252,10 @@
    return $True
  }
 
-Export-ModuleMember -Function Expand-Path,Get-RelativeRootDirectory,Invoke-FileDownload
+Export-ModuleMember -Function `
+  Compare-StrIsBlank, `
+  Compare-StrIsInteger, `
+  Compare-StrIsFloat, `
+  Expand-Path, `
+  Get-RelativeRootDirectory, `
+  Invoke-FileDownload

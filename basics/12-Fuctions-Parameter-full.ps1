@@ -1,12 +1,34 @@
 Write-Output "more Validate function use cmd to see: help about_Functions_Advanced_Parameters"
 
 function Test-MrFunction {
+   <#
+   .SYNOPSIS
+     Test-MrFunction
 
+   .DESCRIPTION
+     use Test-MrFunction
+
+   .PARAMETER ComputerName
+     name of computer alias as -cpname
+
+   .PARAMETER drivetype
+     drive type only use 1,2,3,4
+
+   .INPUTS
+     String
+
+   .OUTPUTS
+     PSCustomObject
+
+   .EXAMPLE
+     Test-MrFunction -cpname one,two
+   #>
   [CmdletBinding()]
+  [OutputType([int])]
   param (
       [Parameter(
         Mandatory=$True,
-        HelpMessage="Enter a computer name to query")]
+        HelpMessage="Enter more computer name to query")]
       [Alias('cpname')]
       [string[]]$ComputerName,
       [ValidateSet(1,2,3,4)] # only let ddrivetype use 1,2,3,4
@@ -21,6 +43,7 @@ function Test-MrFunction {
       Write-Verbose -Message "Attempting to perform some action on $Computer"
       Write-Output $Computer
     }
+    Return
   }
 
 }

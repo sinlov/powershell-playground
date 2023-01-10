@@ -80,6 +80,7 @@ echo "show env RUN_MODE: ${env:RUN_MODE}"
 > 应用程序可以是任意外部可执行程序，包括各种命令行程序，命令脚本
 
 - 规则一，应该使用标准的动词开始，比如: Get Set New Pause ， 运行 `Get-Verb` 查看允许的动词表，后跟一个 `-` 加单数名词
+查询动词时，更常用是按字母排序 `Get-Verb | Sort-Object -Property Verb` or `Get-Verb | Sort Verb`
 - 不是所有的都是 `动词-名词`，其实可以使用 `动词-动词` 作为组合
 
 ## powershell 别名

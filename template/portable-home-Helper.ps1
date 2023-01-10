@@ -5,6 +5,31 @@
     Helper functions and shims for older versions of PowerShell
  #>
 
+Function Compare-StrIsBlank ([string]$InputObject) {
+  if (($InputObject -eq "") -or ($InputObject -eq $Null)) {
+    Return $True
+  } else {
+    Return $False
+  }
+}
+
+Function Compare-StrIsInteger ([string]$InputObject) {
+  if ($InputObject -match "^\d+$" ) {
+    Return $True
+  } else {
+    Return $False
+  }
+}
+
+Function Compare-StrIsFloat ([string]$InputObject) {
+  if ($InputObject -match "^\d+\.\d+$") {
+    Return $True
+  } else {
+    Return $False
+  }
+}
+
+
 function Expand-Path
 {
   <#
@@ -29,7 +54,9 @@ function Expand-Path
 
   [OutputType([String])]
   Param (
-      [Parameter(Mandatory=$true)]
+      [Parameter(
+        Mandatory=$true,
+        HelpMessage="need Expand-Path by -Path")]
       [String]
       $Path
   )
@@ -72,7 +99,9 @@ function Get-RelativeRootDirectory
 
   [OutputType([String])]
   Param(
-      [Parameter(Mandatory=$true)]
+      [Parameter(
+        Mandatory=$true,
+        HelpMessage="need RelativePath by -RelativePath")]
       [String]
       $RelativePath
   )
@@ -113,7 +142,9 @@ if (!(Get-Command -Name 'Expand-Archive' `
      function Expand-Archive
      {
          Param(
-             [Parameter(Mandatory=$true)]
+             [Parameter(
+              Mandatory=$true,
+              HelpMessage="need Path by -Path")]
              [String]
              $Path
          )
@@ -183,10 +214,14 @@ function Invoke-FileDownload
   [CmdletBinding()]
   [OutputType([Boolean])]
   param (
-    [Parameter(Mandatory=$true)]
+    [Parameter(
+      Mandatory=$true,
+      HelpMessage="need Invoke-FileDownload by -Uri")]
     [uri] $Uri,
 
-    [Parameter(Mandatory)]
+    [Parameter(
+      Mandatory,
+      HelpMessage="need Invoke-FileDownload by -OutFile")]
     [string] $OutFile,
 
     [Parameter(Mandatory=$false)]
@@ -226,3 +261,10 @@ function Invoke-FileDownload
 Get-Help Expand-Path
 Get-Help Get-RelativeRootDirectory
 Get-Help Invoke-FileDownload
+
+if(Compare-StrIsBlank("")){
+  Write-Output "Compare-StrIsBlank check str is blank"
+}
+else {
+  Write-Output "Compare-StrIsBlank check str is not blank"
+}
