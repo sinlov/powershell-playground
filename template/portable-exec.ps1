@@ -1,25 +1,34 @@
 <#
- .SYNOPSIS
+  .SYNOPSIS
    portable-exec
 
- .DESCRIPTION
+  .DESCRIPTION
    portable-exec
 
- .PARAMETER path
-    path of biz
+  .PARAMETER help
+  use -help show Get-Help
+
+  .PARAMETER env
+  use -env to show env
+
+  .PARAMETER path
+  path of biz
+
+  .PARAMETER ComputerName
+  args can like cp-one,cp-two and only count 1-3
 
  .PARAMETER drivetype
-     drive type only use 1,2,3,4
+  drive type only use 1,2,3,4
 
  .INPUTS
-     String
+  String
 
  .OUTPUTS
    PSCustomObject
 
  .EXAMPLE
-   portable-exec -cpname one,two
- #>
+  portable-exec -cpname one,two
+#>
  [CmdletBinding()]
  param (
    [switch]$help,
