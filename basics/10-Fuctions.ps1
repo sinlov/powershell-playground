@@ -162,3 +162,54 @@ function Test-MrPipelineInput {
   }
 
 }
+
+Write-Output "`nUnlike its programming language, Powershell's functions can have multiple return values."
+
+function Get-gbMeasure($amount)
+{
+    "$amount GB=$($amount) GB"
+    "$amount GB=$($amount*1gb/1mb) MB"
+    "$amount GB=$($amount*1gb/1kb) KB"
+    "$amount GB=$($amount*1gb) B"
+}
+
+# will return 4 value
+Get-gbMeasure 1
+
+Write-Output "Store all return values in one variable"
+$result=Get-gbMeasure 1
+
+Write-Output "All return values are automatically stored in an array"
+$result.GetType().Name
+
+Write-Output "Access each return value through the index"
+$result[2]
+
+function Get-RetrunFunction ($num)
+{
+    1
+    9
+    return 10
+    4
+    6
+}
+$rFunction = Get-RetrunFunction
+Write-Output "Get-RetrunFunction return: ${rFunction}"
+Write-Output "function will stop at return"
+
+function Get-lottery([int]$number=1)
+{
+  $rand = New-Object system.random
+  For ($i=1; $i -le $number; $i++) {
+    $rand.next(1,50)
+  }
+}
+
+Write-Output "When the parameter is empty, the returned value is not an array"
+$lottey = Get-lottery
+$lottey -is [array]
+
+Write-Output "If multiple random numbers are specified, the return value is an array type"
+
+$lottey = Get-lottery 10
+$lottey -is [array]

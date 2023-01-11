@@ -53,18 +53,22 @@ Write-Output "`nOnce again, you can also use Get-Command to return a list of the
 
 Write-Output "`nValidate input early on"
 Write-Output "Always type the variables that are being used for your parameters (specify a datatype)."
+Write-Output "data type can use bool string, switch will let parameter default `$False"
 
 function Test-MrParameterValidation {
 
   [CmdletBinding()]
   param (
       [Parameter(Mandatory)]
-      [string]$ComputerName
+      [string]$ComputerName,
+      [switch]$open
   )
 
   Write-Output $ComputerName
 
 }
+
+Write-Output "`n"
 
 Write-Output "`nIn the previous example, I've specified String as the datatype for the ComputerName parameter. This causes it to allow only a single computer name to be specified. If more than one computer name is specified via a comma-separated list, an error is generated."
 Write-Output "If run as: Test-MrParameterValidation -ComputerName Server01, Server02"

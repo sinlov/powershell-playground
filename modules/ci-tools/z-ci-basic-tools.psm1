@@ -27,7 +27,8 @@ Function Compare-StrIsFloat ([string]$InputObject) {
   }
 }
 
- function Expand-Path
+
+function Expand-Path
  {
    <#
    .SYNOPSIS

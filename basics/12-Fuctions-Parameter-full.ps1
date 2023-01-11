@@ -29,32 +29,47 @@ function Test-MrFunction {
       [Parameter(
         Mandatory=$True,
         HelpMessage="Enter more computer name to query")]
+      [ValidateCount(1,3)] # only use 1-3
       [Alias('cpname')]
       [string[]]$ComputerName,
       [ValidateSet(1,2,3,4)] # only let ddrivetype use 1,2,3,4
-      [int]$drivetype = 3
+      [int]$drivetype = 3,
+      [Parameter(
+        Mandatory=$False,
+        HelpMessage="Parameter missing: -logDir as string")]
+      # [AllowEmptyString()] # can be empty
+      [string]$logDir,
+      # [AllowEmptyCollection()] # can be empty arr,
+      [System.Security.SecureString] # can let out put by ****
+      [Parameter(Mandatory=$true)]
+      $password
   )
 
   PROCESS {
 
     Write-Verbose -Message "this time set -drivetype $drivetype"
+    Write-Verbose -Message "this time set -logDir $logDir"
 
     foreach ($Computer in $ComputerName) {
       Write-Verbose -Message "Attempting to perform some action on $Computer"
-      Write-Output $Computer
+      Write-Host $Computer
     }
     Return
   }
 
 }
 
-Write-Output "see Test-MrFunction use helper"
-Write-Output "Get-Command -Name Test-MrFunction -Syntax"
+Write-Host "see Test-MrFunction use helper"
+Write-Host "Get-Command -Name Test-MrFunction -Syntax"
 
 Get-Command -Name Test-MrFunction -Syntax
 
 Test-MrFunction -cpname one,two
 
-Write-Output "use -verbose to see more info"
+Write-Host "use -verbose to see more info"
 
 Test-MrFunction -cpname one,two -verbose
+
+Write-Host "-logDir can use empty"
+
+Test-MrFunction -cpname one,two -verbose -logDir ""

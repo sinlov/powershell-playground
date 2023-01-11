@@ -29,7 +29,6 @@ Function Compare-StrIsFloat ([string]$InputObject) {
   }
 }
 
-
 function Expand-Path
 {
   <#
@@ -262,9 +261,36 @@ Get-Help Expand-Path
 Get-Help Get-RelativeRootDirectory
 Get-Help Invoke-FileDownload
 
+Function Get-ScriptSelfName () {
+  <#
+  .Notes
+    if want script root, please use $PSScriptRoot
+  #>
+  Return (Get-ChildItem "$PSCommandPath").Name
+}
+
+Function Get-ScriptFullPath () {
+  <#
+    .Notes
+      this will return as $PSCommandPath
+  #>
+  Return (Join-Path $PSScriptRoot (Get-ScriptSelfName))
+  # powershell 3.0 remove $MyInvocation
+  # Return (Split-Path -Parent $MyInvocation.MyCommand.Definition)
+}
+
+Write-Host "now PSScriptRoot: ${PSScriptRoot}"
+Write-Host "see PSCommandPath ${PSCommandPath}"
+Write-Host "see input $$"
+Write-Host "Get-ScriptSelfName $(Get-ScriptSelfName)"
+
+Write-Host "Function Get-ScriptFullPath"
+$script_run_path = Get-ScriptFullPath
+Write-Host "Get-ScriptFullPath: ${script_run_path}"
+
 if(Compare-StrIsBlank("")){
-  Write-Output "Compare-StrIsBlank check str is blank"
+  Write-Host "Compare-StrIsBlank check str is blank"
 }
 else {
-  Write-Output "Compare-StrIsBlank check str is not blank"
+  Write-Host "Compare-StrIsBlank check str is not blank"
 }
