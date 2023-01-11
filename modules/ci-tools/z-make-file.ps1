@@ -24,10 +24,10 @@
   String
 
  .OUTPUTS
-  PSCustomObject
+   PSCustomObject
 
  .EXAMPLE
-   portable-exec -cpname one,two
+  portable-exec -cpname one,two
 #>
 [CmdletBinding()]
   param (
