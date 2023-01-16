@@ -3,7 +3,7 @@
    z-make-file
 
   .DESCRIPTION
-   z-make-file
+   z-make-file.ps1
 
   .PARAMETER help
   use -help show Get-Help
@@ -51,7 +51,10 @@
       Mandatory=$False,
       HelpMessage="Parameter missing: -BuildTarget must set"
     )]
-    [ValidateSet("Android", "iOS")]
+    [ValidateSet(
+      "Android", "iOS",
+      IgnoreCase=$False
+    )]
     [string]$buildTarget,
     [Parameter(
       Mandatory=$False,
