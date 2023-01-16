@@ -1,7 +1,7 @@
-  <#
+<#
   .Notes
     Helper functions and shims for older versions of PowerShell
- #>
+#>
 
 function Start-Exec {
   <#
