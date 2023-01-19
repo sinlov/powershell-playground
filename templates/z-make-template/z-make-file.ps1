@@ -11,8 +11,8 @@
   .PARAMETER env
   use -env to show env
 
-  .PARAMETER path
-  path of biz, if not set will use default path
+  .PARAMETER ProjectBuildRoot
+  set build unity root, if not settings will use $PSScriptRoot
 
   .PARAMETER mainExec
   do as mainExec path
@@ -41,8 +41,9 @@ param (
     [switch]$env,
     [Parameter(
             Mandatory = $False,
-            HelpMessage = "Parameter missing: -path as string")]
-    [string]$path,
+            HelpMessage = "Parameter missing: -ProjectBuildRoot as string"
+    )]
+    [string]$ProjectBuildRoot,
     [Parameter(
             Mandatory = $False,
             HelpMessage = "Parameter missing: -MainExec as string")]
@@ -104,11 +105,11 @@ $DefaultMainExec =
 $mainExec =
 ConvertFrom-ParameterStr $mainExec $DefaultMainExec
 
-if (Compare-StrIsBlank($path))
+if (Compare-StrIsBlank($ProjectBuildRoot))
 {
-    $path = $PSScriptRoot
+    $ProjectBuildRoot = $PSScriptRoot
 }
-if (Test-PathNotExist $path $True "arg -path set")
+if (Test-PathNotExist $ProjectBuildRoot $True "arg -ProjectBuildRoot set")
 {
     Return
 }
@@ -122,17 +123,17 @@ if ($env)
 
     Write-Host "Build as exec args"
     Write-Host ""
-    Write-Host "DefaultMainExec        $DefaultMainExec"
+    Write-Host "DefaultMainExec               $DefaultMainExec"
     Write-Host ""
-    Write-Host "path                   $path"
-    Write-Host "mainExec               $mainExec"
+    Write-Host "ProjectBuildRoot              $ProjectBuildRoot"
+    Write-Host "mainExec                      $mainExec"
     Write-Host ""
     Write-Host "Build mark"
     Write-Host " this build only support windows at powershell"
-    Write-Host "buildGitBranchInfo         ${buildGitBranchInfo}"
-    Write-Host "buildGitCommitId           ${buildGitCommitId}"
-    Write-Host "buildGitCommitIdShort      ${buildGitCommitIdShort}"
-    Write-Host "buildMarkTag               ${buildMarkTag}"
+    Write-Host "buildGitBranchInfo            ${buildGitBranchInfo}"
+    Write-Host "buildGitCommitId              ${buildGitCommitId}"
+    Write-Host "buildGitCommitIdShort         ${buildGitCommitIdShort}"
+    Write-Host "buildMarkTag                  ${buildMarkTag}"
     Write-Host ""
     Write-Host "===== Show env end ====="
     Return
