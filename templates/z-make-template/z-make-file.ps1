@@ -145,7 +145,7 @@ if ($help)
     Return
 }
 
-$runRes = Start-Exec -workingDir $PSScriptRoot `
+$runRes = Start-Exec -workingDir $ProjectBuildRoot `
 -exec ${mainExec} `
 -arguments "--help"
 # -notShowOut $True `
