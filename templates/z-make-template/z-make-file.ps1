@@ -127,6 +127,7 @@ if ($env)
     Write-Host ""
     Write-Host "ProjectBuildRoot              $ProjectBuildRoot"
     Write-Host "mainExec                      $mainExec"
+    Write-Host "buildTarget                   $buildTarget"
     Write-Host ""
     Write-Host "Build mark"
     Write-Host " this build only support windows at powershell"
