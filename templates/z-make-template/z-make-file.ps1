@@ -56,7 +56,7 @@ param (
             "Android", "iOS",
             IgnoreCase = $False
     )]
-    [string]$buildTarget,
+    [string]$buildTarget = "Android",
     [Parameter(
             Mandatory = $False,
             HelpMessage = "Enter more computer name to query")]
