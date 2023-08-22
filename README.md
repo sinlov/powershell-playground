@@ -47,7 +47,9 @@ Update-Help Microsoft.PowerShell.*
 
 > 注意要在管理员权限下运行
 
-## 获取命令帮助
+## 常用 powershell 技巧
+
+### 获取命令帮助
 
 ```ps1
 > help Get-EventLog
@@ -59,7 +61,7 @@ Update-Help Microsoft.PowerShell.*
 > Get-Service | Get-Member [method]
 ```
 
-# 别名命令
+### 别名命令
 
 在powershell中，有一些命令有和shell命令一样的别名，但是功能和输出有所不同
 
@@ -71,3 +73,16 @@ Update-Help Microsoft.PowerShell.*
 - `rm` , `rmdir` , 和 `del` 都是 `Remove-Item` 的别名
 - `mkdir` 是 `New-Item` 的别名，也可以跟 `touch` 一样新建文件
 - `cat` ，`tail` ，`head` 可以用 `Get-Content` 配合命令行参数实现 用 cat 就可以加 tab 找参数调用
+
+### git_tools
+
+这个目录下有 git alias 别名增强，使用方法是
+
+```bash
+# 记事本打开配置
+notepad $profile
+# 有 vscode 则使用
+code $profile
+```
+
+把脚本内容复制进去，然后保存，重启 powershell 即可

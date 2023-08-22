@@ -1,6 +1,15 @@
 
 ## git tools
 
+```bash
+# 记事本打开配置
+notepad $profile
+# 有 vscode 则使用
+code $profile
+```
+
+把脚本内容复制进去，然后保存，重启 powershell 即可
+
 ### git alias
 
 设置了非常多常用 git 操作 alias，使用最多的为
