@@ -1,6 +1,20 @@
 ## powershell 换行符
 
-在 powershell 中，换行符是 ``n` 不是常见的 `\n`
+在 powershell 中
+
+```
+换行符是 `n 不是其他编程语言的 \n
+```
+
+## how to use this basic
+
+```ps1
+> .\01-help.ps1
+> .\02-line-break.ps1
+...
+```
+
+to run each powershell script to see the result
 
 ## Powershell 中的管道
 

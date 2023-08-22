@@ -12,6 +12,8 @@
 *.csproj text eol=crlf
 *.user   text eol=crlf
 *.asset  text eol=lf
+*.json  test eol=lf
+*.golden  test eol=lf
 
 ###############################################################################
 # Set default behavior for command prompt diff.
