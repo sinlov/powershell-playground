@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [convention-change-log](https://github.com/convention-change/convention-change-log) for commit guidelines.
 
+## [1.1.0](https://github.com/sinlov/powershell-playground/compare/1.0.0...v1.1.0) (2024-03-22)
+
+### ✨ Features
+
+* add templates/fast-template ([28d0ddd6](https://github.com/sinlov/powershell-playground/commit/28d0ddd653b5b85da9a1730f1420137f7525cae4))
+
+### 📝 Documentation
+
+* add action CI badge at README.md ([d6a63df1](https://github.com/sinlov/powershell-playground/commit/d6a63df1f319535460146715459984116e248e95))
+
 ## 1.0.0 (2023-08-22)
 
 ### ✨ Features
