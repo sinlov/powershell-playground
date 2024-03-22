@@ -1,3 +1,4 @@
+[![ci](https://github.com/sinlov/powershell-playground/actions/workflows/ci.yml/badge.svg)](https://github.com/sinlov/powershell-playground/actions/workflows/ci.yml)
 
 [![GitHub license](https://img.shields.io/github/license/sinlov/powershell-playground)](https://github.com/sinlov/powershell-playground)
 [![GitHub latest SemVer tag)](https://img.shields.io/github/v/tag/sinlov/powershell-playground)](https://github.com/sinlov/powershell-playground/tags)
